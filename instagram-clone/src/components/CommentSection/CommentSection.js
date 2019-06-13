@@ -1,5 +1,7 @@
 import React from 'react';
 import './commentSection.css'
+import PropTypes from 'prop-types';
+import Comment from '../CommentSection/Comment/Comment'
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -12,23 +14,48 @@ class CommentSection extends React.Component {
     render() {
         return (
             <div className='commentSection'>
-                {this.props.comments.map(comment => (
-                    <div key={comment.id} className='comment'>
-                        <div><strong>{comment.username}</strong></div>
-                        <div className='commentText'>{comment.text}</div>
+
+                <div className='likes'>
+                    <div className='icons'>
+                        <span className='far fa-heart fa-lg'></span>
+                        <span className='far fa-comment fa-lg'></span>
                     </div>
+                    <div className='numLikes'><strong>{this.props.likes} likes</strong></div>
+                </div>
+
+                {this.props.comments.map(comment => (
+                    <Comment
+                        key={comment.id}
+                        comment={comment}
+                    />
                 ))}
+
+                {this.props.time}
+
                 <div>
-                    <form class='commentInput'>
+
+                    <form className='commentInput'>
                         <input
                         placeholder='Add a comment...'
                         type='text'
                         />
                     </form>
+
                 </div>
+
             </div>
         )
     }
 
+}
+
+CommentSection.propTypes = {
+    comments: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            username: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired
+        })
+    )
 }
 export default CommentSection;

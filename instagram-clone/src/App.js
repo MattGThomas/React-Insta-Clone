@@ -14,6 +14,14 @@ class App extends React.Component {
     console.log(this.state.data)
   }
 
+  // addComment = event => {
+  //   event.preventDefault();
+  //   const newComment = {
+  //     username: this.state.user,
+  //     text: text
+  //   }
+  // }
+
   render() {
   return (
     <div className="App">

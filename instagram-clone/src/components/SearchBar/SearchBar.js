@@ -15,9 +15,9 @@ const SearchBar = () => {
                 />
             </form>
             <div className='rightSearchBar'>
-                <i className='far fa-star fa-2x'></i>
-                <i className='far fa-heart fa-2x'></i>
-                <i className='far fa-user fa-2x'></i>
+                <span className='far fa-star fa-2x'></span>
+                <span className='far fa-heart fa-2x'></span>
+                <span className='far fa-user fa-2x'></span>
             </div>
         </div>
     )
