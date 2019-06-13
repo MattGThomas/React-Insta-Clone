@@ -1,0 +1,30 @@
+.commentSection {
+    margin: 0 auto;
+    border: 1px solid black;
+    max-width: 900px;
+    padding: 3%;
+}
+/* .commentSection:last-child {
+    border-bottom: 1px solid black;
+} */
+.comment {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    /* flex-wrap: wrap; */
+}
+.commentText {
+    overflow-wrap: break-word;
+    /* word-wrap: break-word; */
+    hyphens: auto;
+    padding-left: 1%;
+    /* align-items: center; */
+}
+.commentInput input {
+    width: 99%;
+    border: none;
+    height: 30px;
+    font-size: 22px;
+    /* padding-left: 1%; */
+    border-top: 1px solid black;
+}

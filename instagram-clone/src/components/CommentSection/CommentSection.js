@@ -1,4 +1,5 @@
 import React from 'react';
+import './commentSection.css'
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -10,15 +11,15 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='commentSection'>
                 {this.props.comments.map(comment => (
-                    <div key={comment.id}>
-                        <strong>{comment.username}</strong>
-                        {comment.text}
+                    <div key={comment.id} className='comment'>
+                        <div><strong>{comment.username}</strong></div>
+                        <div className='commentText'>{comment.text}</div>
                     </div>
                 ))}
                 <div>
-                    <form>
+                    <form class='commentInput'>
                         <input
                         placeholder='Add a comment...'
                         type='text'
