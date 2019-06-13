@@ -8,39 +8,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: dummyData
     };
-    // this.setState({
-    //   data: [dummyData]
-    // })
     console.log(dummyData)
     console.log(this.state.data)
   }
-
-  // {dummyData.map(post => {
-  //   <PostContainer
-  //   key={post.id}
-  //   data={post}
-  //   />
-  // })}
-
-  // componentDidMount(){
-  //   this.setState({
-  //     data: dummyData
-  //     // newData: Array.from(dummyData)
-  //  })
-  //  console.log(this.state.data)
-  // }
-  
-  
 
   render() {
   return (
     <div className="App">
       
       <SearchBar />
-      <PostContainer />
-      {dummyData.map(post => (
+      {/* <PostContainer /> */}
+      {this.state.data.map(post => (
         <PostContainer
         key={post.id}
         data={post}

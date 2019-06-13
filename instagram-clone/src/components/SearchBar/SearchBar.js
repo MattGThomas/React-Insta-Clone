@@ -6,14 +6,16 @@ const SearchBar = () => {
         <div>
             <span className='fab fa-instagram'></span>
             Instagram
-            <input 
-            placeholder = '🔍Search'
-            type = 'text'
-            />
+            <form>
+                <input 
+                placeholder = '🔍Search'
+                type = 'text'
+                />
+            </form>
             <div className='rightSearchBar'>
                 <span className='far fa-star'></span>
-                <span className='fas fa-heart'></span>
-                <span className='fas fa-user'></span>
+                <span className='far fa-heart'></span>
+                <span className='far fa-user'></span>
             </div>
         </div>
     )
