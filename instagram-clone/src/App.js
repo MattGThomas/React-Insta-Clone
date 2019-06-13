@@ -1,21 +1,36 @@
 import React from 'react';
 import './App.css';
 import dummyData from './dummy-data';
-import uuid from 'uuid';
-import SearchBar from './components/SearchBar/SearchBar.js';
+import SearchBar from './components/SearchBar/SearchBar';
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+  componentDidMount(){
+    this.setState({
+      data: dummyData
+    })
+  }
+  
+
+  render() {
   return (
     <div className="App">
       
       <SearchBar />
 
-      {dummyData.map(obj => {
-        return <PostContainer key={uuid()} data={data} />
-      })}
-      
-    </div>
-  );
-}
-
-export default App;
+      {this.state.data.map(post => (
+        <PostContainer
+        key={post.id}
+        data={post}
+        />
+        ))}
+      </div>
+      );
+    }
+  }
+export default App
